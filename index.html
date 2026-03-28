@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стажировки МКБ</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="hero" aria-label="Главный экран">
+        <div class="hero__art">
+          <button
+            class="hero__cta"
+            type="button"
+            data-scroll-target="#internships"
+            aria-label="Выбрать стажировку"
+          ></button>
+        </div>
+      </section>
+
+      <main>
+        <section class="internships" id="internships" aria-labelledby="internships-title">
+          <div class="internships__container">
+            <div class="internships__header reveal" data-reveal>
+              <p class="internships__eyebrow">Стажировки MKB</p>
+              <h1 class="internships__title" id="internships-title">
+                Направления и актуальные вакансии
+              </h1>
+              <p class="internships__lead">
+                Одна точка входа для выбора стажировки: пользователь выбирает направление,
+                видит только актуальные роли и получает быстрый, понятный сценарий без
+                форм, регистрации и лишних экранов.
+              </p>
+            </div>
+
+            <div class="overview-cards reveal" data-reveal aria-label="Ключевые особенности прототипа">
+              <article class="overview-card">
+                <p class="overview-card__label">Формат</p>
+                <h2 class="overview-card__title">Живые команды и реальные задачи</h2>
+                <p class="overview-card__text">
+                  Стажёры подключаются к продуктовым, аналитическим и цифровым задачам
+                  банка, а не проходят абстрактный учебный сценарий.
+                </p>
+              </article>
+              <article class="overview-card">
+                <p class="overview-card__label">Навигация</p>
+                <h2 class="overview-card__title">Понятный выбор трека в один клик</h2>
+                <p class="overview-card__text">
+                  Внутри одной страницы можно быстро переключать направления и сразу видеть
+                  открытые роли без перегруженных переходов.
+                </p>
+              </article>
+              <article class="overview-card overview-card--accent">
+                <p class="overview-card__label">Развитие</p>
+                <h2 class="overview-card__title">“Вакансии” и “Карьера в MKB” появятся позже</h2>
+                <p class="overview-card__text">
+                  Сейчас эти разделы не разворачиваются полноценно, чтобы прототип оставался
+                  цельным и фокусировался на основном клиентском сценарии.
+                </p>
+              </article>
+            </div>
+
+            <div class="tracks reveal" data-reveal id="tracks" aria-label="Направления стажировок"></div>
+
+            <div class="internships__board reveal" data-reveal>
+              <div class="internships__summary">
+                <div>
+                  <p class="internships__summary-label">Сейчас выбрано</p>
+                  <h2 class="internships__summary-title" id="direction-title"></h2>
+                  <p class="internships__summary-text" id="direction-description"></p>
+                </div>
+                <div class="internships__summary-stats">
+                  <span class="summary-chip" id="direction-total"></span>
+                  <span class="summary-chip summary-chip--open" id="direction-open"></span>
+                </div>
+              </div>
+
+              <aside class="spotlight" aria-labelledby="spotlight-title">
+                <p class="spotlight__eyebrow">Выбранная вакансия</p>
+                <h2 class="spotlight__title" id="spotlight-title"></h2>
+                <p class="spotlight__lead" id="spotlight-description"></p>
+                <div class="spotlight__meta">
+                  <span class="spotlight__chip" id="spotlight-direction"></span>
+                  <span class="spotlight__chip spotlight__chip--soft" id="spotlight-status"></span>
+                </div>
+                <div class="spotlight__list" id="spotlight-list"></div>
+                <button class="spotlight__button" type="button" id="spotlight-button">
+                  Открыть карточку стажировки
+                </button>
+              </aside>
+            </div>
+
+            <div
+              data-reveal
+              class="vacancies vacancies--animated"
+              id="vacancies"
+              aria-live="polite"
+              aria-label="Список вакансий выбранного направления"
+            ></div>
+
+            <div class="vacancies__feedback reveal" data-reveal id="vacancy-feedback" hidden>
+              <div>
+                <p class="vacancies__feedback-label">Кликабельная реакция</p>
+                <p class="vacancies__feedback-text" id="vacancy-feedback-text"></p>
+              </div>
+              <span class="vacancies__feedback-badge">Prototype</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="program" aria-labelledby="program-title">
+          <div class="section-shell">
+            <div class="section-heading reveal" data-reveal>
+              <p class="section-heading__eyebrow">Почему это работает</p>
+              <h2 class="section-heading__title" id="program-title">
+                Программа выглядит как реальный продукт, а не как набросок
+              </h2>
+            </div>
+
+            <div class="program-grid">
+              <article class="program-card program-card--accent reveal" data-reveal>
+                <p class="program-card__label">Наставники</p>
+                <h3 class="program-card__title">В каждой роли есть команда, в которую можно встроиться сразу</h3>
+                <p class="program-card__text">
+                  Вместо учебного трека пользователь видит понятный вход в реальные
+                  процессы банка, цифровых сервисов и функций поддержки.
+                </p>
+              </article>
+              <article class="program-card reveal" data-reveal>
+                <p class="program-card__label">Роли</p>
+                <h3 class="program-card__title">Открытые и закрытые вакансии считываются мгновенно</h3>
+                <p class="program-card__text">
+                  Статусы, краткие описания и визуальные различия помогают принять решение
+                  без лишних переходов и без перегруженной анимации.
+                </p>
+              </article>
+              <article class="program-card reveal" data-reveal>
+                <p class="program-card__label">Сценарий</p>
+                <h3 class="program-card__title">От hero до вакансии пользователь проходит за несколько кликов</h3>
+                <p class="program-card__text">
+                  Плавный скролл, один активный трек и сфокусированная правая панель
+                  делают путь коротким и понятным для показа заказчику.
+                </p>
+              </article>
+              <article class="program-card program-card--soft reveal" data-reveal>
+                <p class="program-card__label">Масштабирование</p>
+                <h3 class="program-card__title">Архитектура готова к росту проекта</h3>
+                <p class="program-card__text">
+                  Позже сюда можно спокойно добавить подробные страницы вакансий, карьерный
+                  раздел и отдельные продуктовые маршруты без переделки основы.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="journey" id="journey" aria-labelledby="journey-title">
+          <div class="section-shell">
+            <div class="section-heading reveal" data-reveal>
+              <p class="section-heading__eyebrow">Как это будет работать дальше</p>
+              <h2 class="section-heading__title" id="journey-title">
+                Этапы отбора и входа в программу
+              </h2>
+            </div>
+
+            <div class="journey-grid">
+              <article class="journey-step reveal" data-reveal>
+                <span class="journey-step__number">01</span>
+                <h3 class="journey-step__title">Выбор направления</h3>
+                <p class="journey-step__text">
+                  Кандидат выбирает трек и сразу понимает, по каким ролям набор открыт в
+                  текущем наборе.
+                </p>
+              </article>
+              <article class="journey-step reveal" data-reveal>
+                <span class="journey-step__number">02</span>
+                <h3 class="journey-step__title">Знакомство с ролью</h3>
+                <p class="journey-step__text">
+                  На детальной карточке можно показать стек, задачи, команду и ожидания от
+                  стажёра без тяжёлой формы отклика.
+                </p>
+              </article>
+              <article class="journey-step reveal" data-reveal>
+                <span class="journey-step__number">03</span>
+                <h3 class="journey-step__title">Коммуникация с командой</h3>
+                <p class="journey-step__text">
+                  На следующем шаге сюда можно встроить сценарий первичного контакта или
+                  отклика без полноценной авторизации.
+                </p>
+              </article>
+              <article class="journey-step journey-step--accent reveal" data-reveal>
+                <span class="journey-step__number">04</span>
+                <h3 class="journey-step__title">Выход в почти готовый продукт</h3>
+                <p class="journey-step__text">
+                  Уже сейчас прототип показывает заказчику целостную структуру и поведение
+                  будущего фронта.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq" id="faq" aria-labelledby="faq-title">
+          <div class="section-shell">
+            <div class="section-heading reveal" data-reveal>
+              <p class="section-heading__eyebrow">FAQ</p>
+              <h2 class="section-heading__title" id="faq-title">
+                Частые вопросы о стажировках
+              </h2>
+            </div>
+
+            <div class="faq-list reveal" data-reveal>
+              <details class="faq-item" open>
+                <summary class="faq-item__summary">Можно ли откликнуться сразу на несколько направлений?</summary>
+                <p class="faq-item__text">
+                  В текущем прототипе логика сфокусирована на одном активном направлении,
+                  чтобы путь пользователя был чище и нагляднее для клиентской презентации.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-item__summary">Почему закрытые вакансии нельзя открыть?</summary>
+                <p class="faq-item__text">
+                  Так мы сразу показываем заказчику реальное поведение интерфейса: закрытые
+                  роли визуально доступны для обзора, но недоступны для сценария перехода.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-item__summary">Будет ли здесь отдельный раздел “Карьера в MKB”?</summary>
+                <p class="faq-item__text">
+                  Да, но позже. Сейчас он намеренно не развернут, чтобы не размывать
+                  основной сценарий выбора стажировки и показа актуальных ролей.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-item__summary">Нужно ли подключать backend уже сейчас?</summary>
+                <p class="faq-item__text">
+                  Нет. Для клиентского прототипа важнее правдоподобный пользовательский
+                  опыт, кликабельность и визуальная цельность, а не реальная интеграция.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="final-cta" aria-labelledby="final-cta-title">
+          <div class="section-shell final-cta__shell reveal" data-reveal>
+            <div class="final-cta__content">
+              <p class="final-cta__eyebrow">Финальный экран</p>
+              <h2 class="final-cta__title" id="final-cta-title">
+                Прототип уже можно показывать как рабочую концепцию сайта для стажёров
+              </h2>
+              <p class="final-cta__text">
+                Основа собрана, интерактивность работает, композиция выдержана в духе
+                исходного макета, а структура страницы готова к развитию в полноценный фронт.
+              </p>
+            </div>
+            <div class="final-cta__actions">
+              <button class="final-cta__button" type="button" data-scroll-target="#internships">
+                Вернуться к вакансиям
+              </button>
+              <button
+                class="final-cta__button final-cta__button--secondary"
+                type="button"
+                data-scroll-target="#journey"
+              >
+                Посмотреть этапы
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="section-shell site-footer__shell reveal" data-reveal>
+          <p class="site-footer__brand">MKB Internships Prototype</p>
+          <p class="site-footer__text">
+            Кликабельный десктопный прототип без backend-интеграций, собранный для
+            клиентского показа.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
