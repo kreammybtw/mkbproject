@@ -262,8 +262,6 @@ const directionTitleNode = document.querySelector("#direction-title");
 const directionDescriptionNode = document.querySelector("#direction-description");
 const directionTotalNode = document.querySelector("#direction-total");
 const directionOpenNode = document.querySelector("#direction-open");
-const feedbackNode = document.querySelector("#vacancy-feedback");
-const feedbackTextNode = document.querySelector("#vacancy-feedback-text");
 const spotlightTitleNode = document.querySelector("#spotlight-title");
 const spotlightDescriptionNode = document.querySelector("#spotlight-description");
 const spotlightDirectionNode = document.querySelector("#spotlight-direction");
@@ -328,8 +326,6 @@ function renderTracks() {
 
       state.activeDirectionId = direction.id;
       state.selectedVacancyKey = "";
-      feedbackNode.hidden = true;
-      feedbackTextNode.textContent = "";
       render();
     });
 
@@ -392,10 +388,6 @@ function renderVacancies(direction) {
 
       card.addEventListener("click", () => {
         state.selectedVacancyKey = key;
-        feedbackNode.hidden = false;
-        feedbackNode.classList.add("is-visible");
-        feedbackTextNode.textContent =
-          `Выбрана вакансия "${vacancy.title}". На следующем этапе здесь может открываться подробная карточка стажировки или сценарий отклика.`;
         render();
       });
     } else {
@@ -482,11 +474,6 @@ spotlightButtonNode?.addEventListener("click", () => {
   if (!vacancy.isOpen) {
     return;
   }
-
-  feedbackNode.hidden = false;
-  feedbackNode.classList.add("is-visible");
-  feedbackTextNode.textContent =
-    `Открыта детальная точка входа для "${vacancy.title}". В следующей итерации сюда можно встроить подробное описание программы без изменения архитектуры страницы.`;
 
   document.querySelector("#journey")?.scrollIntoView({
     behavior: "smooth",
