@@ -250,6 +250,8 @@ const directions = [
 ];
 
 const initialDirectionId = "it-digital";
+const hiddenDirectionIds = new Set(["security", "strategy", "data-science"]);
+const availableDirections = directions.filter((direction) => !hiddenDirectionIds.has(direction.id));
 
 const state = {
   activeDirectionId: initialDirectionId,
@@ -272,7 +274,7 @@ const scrollButtons = document.querySelectorAll("[data-scroll-target]");
 const revealNodes = document.querySelectorAll("[data-reveal]");
 
 function getDirection(directionId) {
-  return directions.find((direction) => direction.id === directionId) ?? directions[0];
+  return availableDirections.find((direction) => direction.id === directionId) ?? availableDirections[0];
 }
 
 function getVacancyKey(directionId, vacancyTitle) {
@@ -305,7 +307,7 @@ function getSelectedVacancy(direction) {
 function renderTracks() {
   tracksNode.innerHTML = "";
 
-  directions.forEach((direction) => {
+  availableDirections.forEach((direction) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "track-button";
@@ -361,7 +363,7 @@ function renderSpotlight(direction) {
   });
 
   spotlightButtonNode.textContent = isOpen
-    ? "Открыть карточку стажировки"
+    ? "Подать заявку"
     : "Набор по этой роли закрыт";
   spotlightButtonNode.disabled = !isOpen;
 }
@@ -475,10 +477,7 @@ spotlightButtonNode?.addEventListener("click", () => {
     return;
   }
 
-  document.querySelector("#journey")?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  window.location.href = "/apply";
 });
 
 setupRevealAnimations();

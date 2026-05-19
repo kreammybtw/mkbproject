@@ -1,2 +1,7 @@
 node_modules
 dist
+.next
+.next-dev.log
+.next-dev.err.log
+.static-dev.log
+.static-dev.err.log
