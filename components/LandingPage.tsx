@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import MkbLogoMark from "./MkbLogoMark";
 
 type Vacancy = {
   title: string;
@@ -247,9 +248,7 @@ export default function LandingPage() {
       <section className="mx-auto flex min-h-screen max-w-[1920px] flex-col px-6 py-8 sm:px-10 lg:px-20">
         <header className="flex items-center justify-between gap-8">
           <Link href="/" className="flex items-center gap-4 text-mkb-red">
-            <span className="grid h-16 w-16 place-items-center rounded-full bg-[radial-gradient(circle_at_70%_20%,#12a7d9_0_18%,transparent_34%),radial-gradient(circle_at_30%_18%,#a5d594_0_16%,transparent_35%),linear-gradient(135deg,#ffd866_0%,#ff7d20_43%,#dd0a34_80%)]">
-              <span className="h-5 w-9 -rotate-45 skew-x-[-12deg] border-b-[7px] border-l-[7px] border-white" />
-            </span>
+            <MkbLogoMark className="h-16 w-16 shrink-0" />
             <span className="font-display text-6xl font-black tracking-[-0.04em]">МКБ</span>
           </Link>
 

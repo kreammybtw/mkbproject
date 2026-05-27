@@ -63,7 +63,7 @@ export default function ApplicationForm() {
             </h1>
           </div>
           <p className="max-w-xl text-lg font-semibold leading-relaxed text-mkb-muted">
-            Заполни визуальную форму прототипа. Данные никуда не отправляются и не сохраняются.
+            Заполни форму, чтобы мы узнали о тебе больше. Не забудь прикрепить резюме и написать сопроводительное письмо!
           </p>
         </header>
 
@@ -97,7 +97,7 @@ export default function ApplicationForm() {
                   Резюме
                 </p>
                 <p className="mt-3 text-base font-semibold leading-relaxed text-mkb-dark">
-                  Можно показать будущий сценарий загрузки файла без реальной отправки.
+                  Прикрепи свое резюме в формате PDF или DOCX. Максимальный размер файла — 5 МБ.
                 </p>
               </div>
               <button

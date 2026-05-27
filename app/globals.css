@@ -15,3 +15,200 @@ body {
 ::selection {
   background: rgba(221, 10, 52, 0.18);
 }
+
+/* Keep the landing page comfortably framed on wide displays. */
+main:has(> #internships) > section:first-child {
+  max-width: 1440px;
+  min-height: auto;
+  padding: clamp(24px, 2.2vw, 32px) clamp(28px, 4.4vw, 64px) 0;
+}
+
+main:has(> #internships) > section:first-child header {
+  gap: clamp(20px, 3vw, 40px);
+}
+
+main:has(> #internships) > section:first-child header > a {
+  gap: 10px;
+}
+
+main:has(> #internships) > section:first-child header > a svg {
+  width: clamp(38px, 3.2vw, 44px);
+  height: clamp(38px, 3.2vw, 44px);
+}
+
+main:has(> #internships) > section:first-child header > a span {
+  font-size: clamp(32px, 2.6vw, 38px);
+}
+
+main:has(> #internships) > section:first-child nav {
+  gap: clamp(26px, 3vw, 44px);
+  font-size: clamp(17px, 1.45vw, 20px);
+}
+
+main:has(> #internships) > section:first-child nav a:first-child {
+  padding-bottom: 10px;
+}
+
+main:has(> #internships) > section:first-child header > button {
+  padding: 12px 26px;
+  font-size: clamp(17px, 1.45vw, 20px);
+}
+
+main:has(> #internships) > section:first-child header + div {
+  justify-content: flex-start;
+  padding-top: clamp(72px, 8.5vw, 112px);
+  padding-bottom: clamp(24px, 2.5vw, 36px);
+}
+
+main:has(> #internships) > section:first-child h1 {
+  max-width: 1050px;
+  font-size: clamp(58px, 5.3vw, 76px);
+  line-height: 0.98;
+}
+
+main:has(> #internships) > section:first-child h1 + p {
+  max-width: 720px;
+  margin-top: clamp(38px, 4vw, 54px);
+  font-size: clamp(26px, 2.2vw, 32px);
+}
+
+main:has(> #internships) > section:first-child h1 + p + p {
+  max-width: 1040px;
+  margin-top: clamp(28px, 3.2vw, 42px);
+  font-size: clamp(19px, 1.58vw, 22px);
+  line-height: 1.48;
+  letter-spacing: -0.025em;
+}
+
+main:has(> #internships) > section:first-child header + div > a {
+  min-height: 58px;
+  margin-top: clamp(32px, 3.2vw, 42px);
+  padding-inline: 30px;
+  font-size: clamp(19px, 1.58vw, 22px);
+}
+
+#internships,
+#journey {
+  padding-inline: clamp(24px, 4.4vw, 64px);
+}
+
+#internships {
+  padding-top: clamp(72px, 6.2vw, 94px);
+  padding-bottom: clamp(72px, 6.2vw, 94px);
+}
+
+#internships > div,
+#journey > div {
+  max-width: 1312px;
+}
+
+#internships h2 {
+  font-size: clamp(42px, 4.1vw, 58px);
+}
+
+#internships > div > p:last-of-type {
+  max-width: 700px;
+  font-size: clamp(18px, 1.45vw, 20px);
+}
+
+@media (max-width: 1023px) {
+  main:has(> #internships) > section:first-child {
+    min-height: auto;
+    padding-inline: clamp(20px, 5.5vw, 40px);
+  }
+
+  main:has(> #internships) > section:first-child header + div {
+    padding-top: clamp(56px, 10vw, 76px);
+  }
+
+  main:has(> #internships) > section:first-child h1 {
+    font-size: clamp(48px, 8.5vw, 62px);
+  }
+}
+
+@media (max-width: 639px) {
+  main:has(> #internships) > section:first-child {
+    padding: 20px 20px 52px;
+  }
+
+  main:has(> #internships) > section:first-child header {
+    gap: 12px;
+  }
+
+  main:has(> #internships) > section:first-child header > a svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  main:has(> #internships) > section:first-child header > a span {
+    font-size: 28px;
+  }
+
+  main:has(> #internships) > section:first-child header > button {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  main:has(> #internships) > section:first-child header + div {
+    padding-top: 52px;
+    padding-bottom: 0;
+  }
+
+  main:has(> #internships) > section:first-child h1 {
+    font-size: clamp(38px, 12vw, 46px);
+    line-height: 0.98;
+  }
+
+  main:has(> #internships) > section:first-child h1 + p {
+    margin-top: 32px;
+    font-size: clamp(23px, 7.3vw, 28px);
+    line-height: 1.12;
+  }
+
+  main:has(> #internships) > section:first-child h1 + p + p {
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 1.48;
+  }
+
+  main:has(> #internships) > section:first-child header + div > a {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 30px;
+    padding-inline: 18px;
+    font-size: 18px;
+  }
+
+  #internships,
+  #journey {
+    padding-inline: 20px;
+  }
+
+  #internships {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  #internships h2,
+  #journey h2 {
+    font-size: clamp(32px, 10.2vw, 40px);
+  }
+
+  #internships h3 {
+    font-size: clamp(29px, 9vw, 36px);
+  }
+
+  #internships button,
+  #internships a {
+    max-width: 100%;
+  }
+
+  #internships article > div:last-child {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #internships article > div:last-child a {
+    text-align: center;
+  }
+}

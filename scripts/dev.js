@@ -16,7 +16,7 @@ function isPortFree(targetPort) {
       server.close(() => resolve(true));
     });
 
-    server.listen(targetPort, "127.0.0.1");
+    server.listen(targetPort);
   });
 }
 
